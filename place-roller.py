@@ -21,7 +21,7 @@ def rollPlace(First = False):
     if First:
         rolledNatures = [natures[key][d6] for key, d6 in zip(list(natures.keys())[:3], d6s)]
     else:
-        rolledCategories = [key for key in natures.keys()]
+        rolledCategories = list(natures.keys())
         random.shuffle(rolledCategories)
         rolledNatures = [natures[key][d6] for key, d6 in zip(rolledCategories[:3], d6s)]
     return f"you rolled a {rolledNatures[0]}, a {rolledNatures[1]} and a {rolledNatures[2]}."
